@@ -163,9 +163,11 @@ export class YarnPackageManager implements PackageManager {
   }
 }
 
+export type CreateForProjectOptions = { npm?: boolean; yarn?: boolean };
+
 export function createForProject(
   projectRoot: string,
-  options: { npm?: boolean; yarn?: boolean } = {}
+  options: CreateForProjectOptions = {}
 ) {
   let PackageManager;
   if (options.npm) {
